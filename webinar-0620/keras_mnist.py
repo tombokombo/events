@@ -59,7 +59,7 @@ model.add(Dropout(0.5))
 model.add(Dense(args.num_classes, activation='softmax'))
 
 model.compile(loss=keras.losses.categorical_crossentropy,
-              optimizer=keras.optimizers.Adadelta(),
+              optimizer=keras.optimizers.adadelta_experimental.Adadelta(),
               metrics=['accuracy'])
 
 model.fit(x_train, y_train,
