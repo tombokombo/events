@@ -1,2 +1,2 @@
-keras
+keras==2.4.3
 tensorflow>=2.2
