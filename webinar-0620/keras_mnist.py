@@ -8,6 +8,7 @@ from keras.datasets import mnist
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Dense, Dropout, Flatten
 from keras.models import Sequential
+from keras.utils import np_utils
 
 parser = argparse.ArgumentParser(description='Keras mnist example')
 parser.add_argument('--batch_size', type=int, default=128,
@@ -42,8 +43,8 @@ print(x_train.shape[0], 'train samples')
 print(x_test.shape[0], 'test samples')
 
 # convert class vectors to binary class matrices
-y_train = keras.utils.np_utils.to_categorical(y_train, args.num_classes)
-y_test  = keras.utils.np_utils.to_categorical(y_test, args.num_classes)
+y_train = np_utils.to_categorical(y_train, args.num_classes)
+y_test  = np_utils.to_categorical(y_test, args.num_classes)
 
 model = Sequential()
 model.add(Conv2D(32, kernel_size=(3, 3),
